@@ -1,32 +1,71 @@
-table {
-    width: 100%;
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+}
+header {
+    font-family: 'ARIAL BLACK';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #0033cc, #0066ff, #0099ff, #33ccff);
+    background-size: 300% 300%;
+    color: white;
+    animation: slideDown 1s ease;
+    height: fit-content;
+}
+h1{
+    height: fit-content;
+    margin: 0;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Стилі для кнопки */
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute; /* Встановлюємо кнопку абсолютно */
+    top: 50%; /* Розміщуємо по вертикалі на середині екрану */
+    left: 50%; /* Розміщуємо по горизонталі на середині екрану */
+    transform: translate(-50%, -50%); /* Коригуємо позицію */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Стилі при наведенні на кнопку */
+button:hover {
+    background-color: #0056b3; /* Зміна кольору фону при наведенні */
+    transform: scale(1.05) translate(-50%, -50%); /* Легке збільшення кнопки при наведенні */
+}
+
+/* Стилі для таблиці */
+#formulas-table {
+    width: 80%;
+    margin: 20px auto; /* Відступи для таблиці */
     border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
+}
+
+#formulas-table th, #formulas-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
     text-align: left;
 }
 
-table th, table td {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-}
-
-table th {
+#formulas-table th {
     background-color: #f2f2f2;
-}
-
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-h2 {
-    background: linear-gradient(-45deg, #0033cc, #0066ff, #0099ff, #33ccff);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
+    font-weight: bold;
 }
